@@ -1,0 +1,9 @@
+<launch>
+ <param name="latitude_init" value="45.621668" />
+ <param name="longitude_init" value="9.281553" />
+ <param name="h0" value="224.573796" />
+ <group ns="listener">
+ <node pkg="lla2enu" name="listener_front" type="listener" args="front" output="screen"/>
+ <node pkg="lla2enu" name="listener_obs" type="listener" args="obs" output="screen"/>
+</group>
+</launch>
