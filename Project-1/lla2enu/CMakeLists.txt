@@ -207,8 +207,8 @@ include_directories(
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
 
-add_executable(listener src/sub.cpp)
-target_link_libraries(listener ${catkin_LIBRARIES})
+add_executable(lla2enu src/sub.cpp)
+target_link_libraries(lla2enu ${catkin_LIBRARIES})
 
 #add_executable(lla2enu_obs src/sub_obs.cpp)
 #target_link_libraries(lla2enu_obs ${catkin_LIBRARIES})

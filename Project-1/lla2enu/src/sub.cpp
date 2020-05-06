@@ -70,37 +70,36 @@ public:
     float h = msg->altitude;
 
     // fixed position
-    //45.621656,9.281552, 224.616617
-    float latitude_init;
-    float longitude_init;
-    float h0;
+    float latitude_init=45.6311926152;
+    float longitude_init=9.2947495255;
+    float h0=224.616617;
 
     ros::NodeHandle n;
-    if (n.hasParam("/latitude_init"))
+    if (n.hasParam("/lla2enu/latitude_init"))
     {
-      n.getParam("/latitude_init", latitude_init);
+      n.getParam("/lla2enu/latitude_init", latitude_init);
       ROS_INFO("Latitude init got");
     }
     else
     {
-      ROS_INFO("No param named 'latitude_init' Default value:45.6311926152");
+      ROS_INFO("No param named '/lla2enu/latitude_init' Default value:45.6311926152");
     }
 
-    if (n.hasParam("/longitude_init"))
+    if (n.hasParam("/lla2enu/longitude_init"))
     {
-      n.getParam("/longitude_init", longitude_init);
+      n.getParam("/lla2enu/longitude_init", longitude_init);
     }
     else
     {
-      ROS_INFO("No param named 'longitude_init' Default value:9.2947495255");
+      ROS_INFO("No param named '/lla2enu/longitude_init' Default value:9.2947495255");
     }
-    if (n.hasParam("/h0"))
+    if (n.hasParam("/lla2enu/h0"))
     {
-      n.getParam("/h0", h0);
+      n.getParam("/lla2enu/h0", h0);
     }
     else
     {
-      ROS_INFO("No param named 'h0' Default value:231.506675163");
+      ROS_INFO("No param named '/lla2enu/h0' Default value:224.616617");
     }
 
     //lla to ecef
@@ -155,6 +154,7 @@ public:
     }
     else
     {
+      ROS_INFO("Signal Lost Topic: %s", topic.c_str());
       xEast = NAN;
       yNorth = NAN;
       zUp = NAN;
@@ -188,7 +188,7 @@ public:
 int main(int argc, char **argv)
 {
 
-  ros::init(argc, argv, "listener");
+  ros::init(argc, argv, "ll2enu");
   lla2enu my_converter(argv[1]);
 
   ros::spin();
