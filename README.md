@@ -1,6 +1,6 @@
 # Robotics Course Project
 
-> **Archived.** This is a 2019 university course project (robotics, ROS) and is no longer maintained.
+> **Archived.** This is a 2020 university course project (robotics, ROS) and is no longer maintained.
 
 Project 1 of a robotics course: a ROS node (`lla2enu`) that converts GPS fixes (latitude, longitude, altitude) into a local East-North-Up (ENU) Cartesian frame around a fixed reference point. For each subscribed GPS topic it:
 
