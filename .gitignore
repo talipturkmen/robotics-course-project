@@ -1,0 +1,17 @@
+# catkin workspace output
+build/
+devel/
+install/
+logs/
+.catkin_tools/
+.catkin_workspace
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
